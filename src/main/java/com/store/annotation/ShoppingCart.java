@@ -18,7 +18,7 @@ public class ShoppingCart implements Serializable {
     private Long id;
 
     @OneToOne
-    @JoinColumn(name="CUSTOMER_ID",nullable=false,unique=true)
+    @JoinColumn(name="CUSTOMER_ID")
     private Customer customer;
 
     @Column(name = "RECEIPT")

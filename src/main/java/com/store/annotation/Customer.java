@@ -2,6 +2,7 @@ package com.store.annotation;
 
 import javax.persistence.*;
 
+
 /**
  * Created by bobby on 2/12/2017.
  */
@@ -42,4 +43,5 @@ public class Customer {
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
+
 }
