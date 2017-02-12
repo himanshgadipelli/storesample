@@ -9,8 +9,8 @@
     </database>
     <schema id="3" parent="2" name="public">
       <ObjectId>2200</ObjectId>
-      <IntrospectionTimestamp>2017-02-12.18:00:39.554</IntrospectionTimestamp>
-      <IntrospectionStateNumber>978</IntrospectionStateNumber>
+      <IntrospectionTimestamp>2017-02-12.18:48:14.740</IntrospectionTimestamp>
+      <IntrospectionStateNumber>1012</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -35,76 +35,123 @@
       <SequenceIdentity>1</SequenceIdentity>
     </sequence>
     <sequence id="10" parent="3" name="customer_customer_id_seq">
-      <ObjectId>17102</ObjectId>
-      <StateNumber>976</StateNumber>
+      <ObjectId>17209</ObjectId>
+      <StateNumber>1009</StateNumber>
       <SequenceIdentity>1</SequenceIdentity>
     </sequence>
-    <table id="11" parent="3" name="customer">
-      <ObjectId>17104</ObjectId>
-      <StateNumber>978</StateNumber>
+    <sequence id="11" parent="3" name="hibernate_sequence">
+      <ObjectId>17207</ObjectId>
+      <StateNumber>1008</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+    </sequence>
+    <table id="12" parent="3" name="customer">
+      <ObjectId>17211</ObjectId>
+      <StateNumber>1012</StateNumber>
     </table>
-    <table id="12" parent="3" name="customer_cart">
+    <table id="13" parent="3" name="customer_cart">
       <ObjectId>17115</ObjectId>
       <StateNumber>978</StateNumber>
     </table>
-    <column id="13" parent="11" name="customer_id">
+    <table id="14" parent="3" name="customer_order">
+      <ObjectId>17220</ObjectId>
+      <StateNumber>1012</StateNumber>
+    </table>
+    <column id="15" parent="12" name="customer_id">
       <Position>1</Position>
       <DataType>bigint|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>976</StateNumber>
+      <StateNumber>1009</StateNumber>
       <DefaultExpression>nextval(&apos;customer_customer_id_seq&apos;::regclass)</DefaultExpression>
     </column>
-    <column id="14" parent="11" name="first_name">
+    <column id="16" parent="12" name="first_name">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
-      <StateNumber>976</StateNumber>
+      <StateNumber>1009</StateNumber>
     </column>
-    <column id="15" parent="11" name="last_name">
+    <column id="17" parent="12" name="last_name">
       <Position>3</Position>
       <DataType>varchar(255)|0</DataType>
-      <StateNumber>976</StateNumber>
+      <StateNumber>1009</StateNumber>
     </column>
-    <index id="16" parent="11" name="customer_pkey">
-      <ObjectId>17111</ObjectId>
+    <index id="18" parent="12" name="customer_pkey">
+      <ObjectId>17218</ObjectId>
       <ColNames>customer_id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="17" parent="11" name="customer_pkey">
-      <ObjectId>17112</ObjectId>
+    <key id="19" parent="12" name="customer_pkey">
+      <ObjectId>17219</ObjectId>
       <ColNames>customer_id</ColNames>
       <UnderlyingIndexName>customer_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="18" parent="12" name="customer_order_id">
+    <column id="20" parent="13" name="customer_order_id">
       <Position>1</Position>
       <DataType>bigint|0</DataType>
       <NotNull>1</NotNull>
       <StateNumber>977</StateNumber>
       <DefaultExpression>nextval(&apos;customer_cart_customer_order_id_seq&apos;::regclass)</DefaultExpression>
     </column>
-    <column id="19" parent="12" name="receipt">
+    <column id="21" parent="13" name="receipt">
       <Position>2</Position>
       <DataType>boolean|0</DataType>
       <StateNumber>977</StateNumber>
     </column>
-    <column id="20" parent="12" name="customer_id">
+    <column id="22" parent="13" name="customer_id">
       <Position>3</Position>
       <DataType>bigint|0</DataType>
       <StateNumber>977</StateNumber>
     </column>
-    <index id="21" parent="12" name="customer_cart_pkey">
+    <index id="23" parent="13" name="customer_cart_pkey">
       <ObjectId>17119</ObjectId>
       <ColNames>customer_order_id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="22" parent="12" name="customer_cart_pkey">
+    <key id="24" parent="13" name="customer_cart_pkey">
       <ObjectId>17120</ObjectId>
       <ColNames>customer_order_id</ColNames>
       <UnderlyingIndexName>customer_cart_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="23" parent="12" name="fko94u22o5xioyn3ky8k3u00l8f">
-      <ObjectId>17121</ObjectId>
+    <column id="25" parent="14" name="customer_order_id">
+      <Position>1</Position>
+      <DataType>bigint|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1010</StateNumber>
+    </column>
+    <column id="26" parent="14" name="order_status">
+      <Position>2</Position>
+      <DataType>integer|0</DataType>
+      <StateNumber>1010</StateNumber>
+    </column>
+    <column id="27" parent="14" name="customer_id">
+      <Position>3</Position>
+      <DataType>bigint|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1010</StateNumber>
+    </column>
+    <index id="28" parent="14" name="customer_order_pkey">
+      <ObjectId>17223</ObjectId>
+      <ColNames>customer_order_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="29" parent="14" name="uk_lkipr5599glgtr9ddye255gp9">
+      <ObjectId>17225</ObjectId>
+      <ColNames>customer_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="30" parent="14" name="customer_order_pkey">
+      <ObjectId>17224</ObjectId>
+      <ColNames>customer_order_id</ColNames>
+      <UnderlyingIndexName>customer_order_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <key id="31" parent="14" name="uk_lkipr5599glgtr9ddye255gp9">
+      <ObjectId>17226</ObjectId>
+      <ColNames>customer_id</ColNames>
+      <UnderlyingIndexName>uk_lkipr5599glgtr9ddye255gp9</UnderlyingIndexName>
+    </key>
+    <foreign-key id="32" parent="14" name="fk7bmwdxb4w4g87scgmkjot4a1w">
+      <ObjectId>17227</ObjectId>
       <ColNames>customer_id</ColNames>
       <RefTableName>customer</RefTableName>
       <RefKeyName>customer_pkey</RefKeyName>

@@ -1,6 +1,8 @@
 package com.store.annotation;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 
 /**
@@ -19,6 +21,7 @@ public class Customer {
 
     @Column(name = "LAST_NAME")
     private String lastName;
+
 
     public Long getId() {
         return id;
@@ -43,5 +46,7 @@ public class Customer {
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
+
+
 
 }

@@ -29,9 +29,11 @@ public class HibernateSchemaTest {
         Customer customer = new Customer();
         customer.setFirstName("Barack");
         customer.setLastName("Obama");
-//        ShoppingCart shoppingCart = new ShoppingCart();
-//        shoppingCart.setCustomer(customer);
-//        shoppingCart.setReceipt(true);
+        Order order = new Order();
+        order.setCustomer(customer);
+        order.setStatus(Status.INTRANSIT);
+
+
         session.save(customer);
     }
 }

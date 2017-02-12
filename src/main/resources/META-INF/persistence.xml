@@ -12,7 +12,7 @@
 
         <!-- Which entities java objects to map -->
         <class>com.store.annotation.Customer</class>
-        <class>com.store.annotation.ShoppingCart</class>
+        <class>com.store.annotation.Order</class>
 
         <!-- Where to connect and which dialect to choose -->
         <properties>
