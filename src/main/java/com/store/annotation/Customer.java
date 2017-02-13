@@ -1,5 +1,7 @@
 package com.store.annotation;
 
+import org.hibernate.annotations.ListIndexBase;
+
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
@@ -22,6 +24,9 @@ public class Customer {
     @Column(name = "LAST_NAME")
     private String lastName;
 
+    @OneToMany(mappedBy = "customer",cascade = CascadeType.ALL)
+    @ListIndexBase
+    private Set<Order> orderSet = new HashSet<Order>();
 
     public Long getId() {
         return id;
@@ -47,6 +52,17 @@ public class Customer {
         this.lastName = lastName;
     }
 
+    public Set<Order> getOrderSet() {
+        return orderSet;
+    }
 
+    public void setOrderSet(Set<Order> orderSet) {
+        this.orderSet = orderSet;
+    }
+
+    public void addOrder(Order order){
+        order.setCustomer(this);
+        orderSet.add(order);
+    }
 
 }
