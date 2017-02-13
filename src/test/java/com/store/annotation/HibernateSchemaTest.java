@@ -31,8 +31,8 @@ public class HibernateSchemaTest {
         customer.setLastName("Obama");
         Order order = new Order();
         order.setCustomer(customer);
-        order.setStatus(Status.INTRANSIT);
-
+        order.setStatus(Status.DELIVERED);
+        customer.addOrder(order);
 
         session.save(customer);
     }
